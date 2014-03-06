@@ -5,5 +5,10 @@ class ModelDesignBanner extends Model {
 		
 		return $query->rows;
 	}
+
+	public function getBannerAddv($banner_id) {
+		$query = $this->db->query("SELECT addv FROM " . DB_PREFIX . "banner WHERE banner_id = '" . (int)$banner_id . "' LIMIT 1");
+		return $query->row['addv'];
+	}
 }
 ?>

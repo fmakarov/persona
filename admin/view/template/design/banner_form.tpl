@@ -23,6 +23,11 @@
               <span class="error"><?php echo $error_name; ?></span>
               <?php } ?></td>
           </tr>
+	        <td><?php echo $entry_addv; ?></td>
+	        <td><input type="text" name="addv" value="<?php echo $addv; ?>" size="100" />
+		        <?php if ($error_name) { ?>
+		        <span class="error"><?php echo $error_name; ?></span>
+		        <?php } ?></td>
           <tr>
             <td><?php echo $entry_status; ?></td>
             <td><select name="status">

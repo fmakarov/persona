@@ -77,9 +77,6 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <?php if ($categories) { ?>
 <div id="menu">
   <ul>
-		<?php foreach ($informations as $information) { ?>
-			<li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-		<?php }?>
     <?php foreach ($categories as $category) { ?>
     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
       <?php if ($category['children']) { ?>
@@ -99,6 +96,11 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
     </li>
     <?php } ?>
   </ul>
+	<ul class="hmenu_right">
+		<?php foreach ($informations as $information) { ?>
+			<li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+		<?php }?>
+	</ul>
 </div>
 <?php } ?>
 <?php if ($error) { ?>

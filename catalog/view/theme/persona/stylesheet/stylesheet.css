@@ -14,7 +14,7 @@ body, td, th, input, textarea, select, a {
 	font-size: 12px;
 }
 h1, .welcome {
-	color: #636E75;
+	color: #000;
 	font: Verdana;
 	margin-top: 0px;
 	margin-bottom: 20px;
@@ -641,6 +641,7 @@ a.button:hover, input.button:hover {
 /* box */
 .box {
 	margin-bottom: 20px;
+    text-transform: uppercase;
 }
 .box .box-heading {
 	-webkit-border-radius: 7px 7px 0px 0px;
@@ -748,6 +749,7 @@ ul.box-category > li ul > li {
 ul.box-category > li ul > li > a {
 	text-decoration: none;
 	display: block;
+    color: #666;
 }
 ul.box-category > li ul > li > a.active {
 	font-weight: bold;
@@ -800,7 +802,24 @@ ul.box-filter > li ul {
 }
 .category-list ul {
 	float: left;
-	width: 18%;
+    padding-left: 5px;
+}
+.category-list ul li {
+    display: block;
+    float: left;
+    padding: 0 5px;
+    border-right: 1px solid #666666;
+}
+.category-list ul li:last-child {
+    border-right: none;
+}
+.category-list ul li a{
+    color: #666666;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.category-list ul li a:hover{
+    text-decoration: underline;
 }
 /* manufacturer */
 .manufacturer-list {
@@ -1645,4 +1664,35 @@ a.logo_phone {
     font-size: 25px;
     background: url('../image/telephone.png') no-repeat 0px 4px;
     padding-left: 40px;
+}
+
+ul.hmenu_right {
+    float: right;
+}
+
+div.banner_addv {
+    position: relative;
+    float: right;
+    z-index: 98;
+    width:300px;
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 5px;
+}
+
+div.banner_addv p {
+    display: inline-block;
+    vertical-align: middle;
+    /*font-family: pallete;*/
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@font-face {
+    font-family: pallete;
+    src: url('../font/pallete.ttf');
 }

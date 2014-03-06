@@ -18,6 +18,7 @@ $_['entry_description'] 	= 'Описание:';
 $_['entry_store']       	= 'Магазины:';
 $_['entry_keyword']         = 'SEO URL:';
 $_['entry_bottom']      	= 'Статья в низу сайта:';
+$_['entry_top']             = 'Статья вверху сайта:';
 $_['entry_status']          = 'Статус:';
 $_['entry_sort_order']  	= 'Порядок сортировки:';
 $_['entry_layout']      	= 'Выберите схему:';

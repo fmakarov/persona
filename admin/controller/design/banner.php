@@ -272,6 +272,7 @@ class ControllerDesignBanner extends Controller {
 		$this->data['text_clear'] = $this->language->get('text_clear');			
 
 		$this->data['entry_name'] = $this->language->get('entry_name');
+		$this->data['entry_addv'] = $this->language->get('entry_addv');
 		$this->data['entry_title'] = $this->language->get('entry_title');
 		$this->data['entry_link'] = $this->language->get('entry_link');
 		$this->data['entry_image'] = $this->language->get('entry_image');		
@@ -348,6 +349,14 @@ class ControllerDesignBanner extends Controller {
 			$this->data['name'] = $banner_info['name'];
 		} else {
 			$this->data['name'] = '';
+		}
+
+		if (isset($this->request->post['addv'])) {
+			$this->data['addv'] = $this->request->post['name'];
+		} elseif (!empty($banner_info)) {
+			$this->data['addv'] = $banner_info['addv'];
+		} else {
+			$this->data['addv'] = '';
 		}
 
 		if (isset($this->request->post['status'])) {

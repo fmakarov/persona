@@ -17,7 +17,9 @@
   </div>
   <?php } ?>
   <?php if ($categories) { ?>
+<!--
   <h2><?php echo $text_refine; ?></h2>
+-->
   <div class="category-list">
     <?php if (count($categories) <= 5) { ?>
     <ul>

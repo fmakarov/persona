@@ -21,7 +21,6 @@ class ControllerModuleSlideshow extends Controller {
 		
 		if (isset($setting['banner_id'])) {
 			$results = $this->model_design_banner->getBanner($setting['banner_id']);
-
 			foreach ($results as $result) {
 				if (file_exists(DIR_IMAGE . $result['image'])) {
 					$this->data['banners'][] = array(
@@ -31,7 +30,10 @@ class ControllerModuleSlideshow extends Controller {
 					);
 				}
 			}
+			$this->data['addv'] = $this->model_design_banner->getBannerAddv($setting['banner_id']);
 		}
+
+
 		
 		$this->data['module'] = $module++;
 						

@@ -1,6 +1,9 @@
 <div class="slideshow">
+	<div class="banner_addv">
+		<p><?php echo($addv);?></p>
+	</div>
   <div id="slideshow<?php echo $module; ?>" class="nivoSlider" style="width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;">
-    <?php foreach ($banners as $banner) { ?>
+	<?php foreach ($banners as $banner) { ?>
     <?php if ($banner['link']) { ?>
     <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" /></a>
     <?php } else { ?>
