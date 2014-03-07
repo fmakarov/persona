@@ -142,6 +142,7 @@
   </table>
   <?php } ?>
   <div class="buttons">
+	<div class="left"><a href="<?php echo $invoice_print_link; ?>" class="button">Распечатать накладную</a></div>
     <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
   </div>
   <?php echo $content_bottom; ?></div>

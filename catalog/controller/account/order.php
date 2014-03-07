@@ -141,18 +141,19 @@ class ControllerAccountOrder extends Controller {
 			'common/header'	
 		);
 
-		$this->response->setOutput($this->render());				
+		$this->response->setOutput($this->render());
 	}
 
 	public function info() { 
 		$this->language->load('account/order');
 
+
 		if (isset($this->request->get['order_id'])) {
 			$order_id = $this->request->get['order_id'];
 		} else {
 			$order_id = 0;
-		}	
-
+		}
+		$this->data['invoice_print_link'] = $this->url->link('payment/cod/printInvoice', 'order_id='.$order_id);
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/order/info', 'order_id=' . $order_id, 'SSL');
 
@@ -438,7 +439,7 @@ class ControllerAccountOrder extends Controller {
 				'common/header'	
 			);
 
-			$this->response->setOutput($this->render());				
+			$this->response->setOutput($this->render());
 		}
 	}
 }

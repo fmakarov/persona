@@ -19,5 +19,19 @@ class ControllerPaymentCod extends Controller {
 
 		$this->model_checkout_order->confirm($this->session->data['order_id'], $this->config->get('cod_order_status_id'));
 	}
+
+	public function printInvoice() {
+		if (isset($this->request->get['order_id'])) {
+			$order_id = $this->request->get['order_id'];
+			$this->load->model('checkout/order');
+			$order = $this->model_checkout_order->getOrder($order_id) ;
+			header('Content-type: application/txt');
+			header('Content-Disposition: attachment; filename="order_persona.txt"');
+			echo 'Номер заказа: ' . $order["order_id"] . PHP_EOL;
+			echo 'Клиент: ' . $order['lastname'] . ' ' . $order['firstname'] . PHP_EOL;
+			echo 'Телефон: ' . $order['telephone'] . PHP_EOL;
+			echo 'К оплате: ' . $order['total'] . PHP_EOL;
+		}
+	}
 }
 ?>

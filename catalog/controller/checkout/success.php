@@ -10,7 +10,8 @@ class ControllerCheckoutSuccess extends Controller {
 			unset($this->session->data['payment_methods']);
 			unset($this->session->data['guest']);
 			unset($this->session->data['comment']);
-			unset($this->session->data['order_id']);	
+			$this->session->data['order_id_for_pr'] = $this->session->data['order_id'];
+			unset($this->session->data['order_id']);
 			unset($this->session->data['coupon']);
 			unset($this->session->data['reward']);
 			unset($this->session->data['voucher']);
@@ -59,6 +60,7 @@ class ControllerCheckoutSuccess extends Controller {
 		$this->data['button_continue'] = $this->language->get('button_continue');
 
 		$this->data['continue'] = $this->url->link('common/home');
+		$this->data['printInvoice'] = $this->url->link('payment/cod/printInvoice', 'order_id='.$this->session->data['order_id_for_pr']);
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/success.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/success.tpl';
@@ -72,7 +74,7 @@ class ControllerCheckoutSuccess extends Controller {
 			'common/content_top',
 			'common/content_bottom',
 			'common/footer',
-			'common/header'			
+			'common/header'
 		);
 
 		$this->response->setOutput($this->render());

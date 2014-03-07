@@ -79,6 +79,7 @@ label {
 #column-left {
 	float: left;
 	width: 180px;
+    text-transform: uppercase;
 }
 #column-right {
 	float: right;
@@ -641,7 +642,6 @@ a.button:hover, input.button:hover {
 /* box */
 .box {
 	margin-bottom: 20px;
-    text-transform: uppercase;
 }
 .box .box-heading {
 	-webkit-border-radius: 7px 7px 0px 0px;
